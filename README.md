@@ -9,4 +9,4 @@
 3. I am interested in learning about *R language*
 
 * A music I listening recently is [Music](https://www.youtube.com/watch?v=33rdx577PxY)
-* A meme that captures how I currently feel about my university studies is ![Desire to get the knoledge puppy](https://i0.wp.com/infographicaday.com/wp-content/uploads/Cute-Doggie.gif?resize=300%2C329)
+* A meme that captures how I currently feel about my university studies is like a desiring to get the knowledge puppy![puppy](https://i0.wp.com/infographicaday.com/wp-content/uploads/Cute-Doggie.gif?resize=300%2C329)
