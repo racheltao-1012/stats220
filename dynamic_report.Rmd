@@ -1,0 +1,70 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+```
+
+```{css}
+
+body{color:#8c8c94; background-color:#fbe2a2}
+p {font-size: 18px}
+
+```
+
+## Clothes Data Analysis
+
+I aim to analysis the relationship between people wear clothes number and type, and relationship between clothes color and clothes type.
+
+```{r}
+library(tidyverse)
+
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRN9AF-pSgnJVhgvE2_20Mk6fSXnUhEzyTjzqnUq6ZtqNPVDSoa6JLDELfHgluUU5zzZ4SFrSbGOiKw/pub?output=csv")
+
+#rename data
+latest_data <- logged_data %>%
+  rename(time = 1, color = 2, location = 3, type = 4, clothes_number = 5 )
+
+# relationship between clothes number and type
+latest_data  %>%
+  ggplot() +
+  geom_bar(aes(x = clothes_number, fill = type)) +
+  labs(
+    title = "Distribution of Clothes Number by Type",
+    x = "Number of Clothes",
+    y = "Count"
+    )
+
+```
+
+```{r}
+
+#relationship between clothes color and type
+
+latest_data  %>%
+  ggplot() +
+  geom_bar(aes(x = color, fill = type)) +
+  labs(
+    title = "Distribution of Clothes Color by Type",
+    x = "Color of Clothes",
+    y = "Count"
+    )
+
+```
+
+## Dynamic comments
+
+```{r}
+# summary values
+average_clothes_number <- mean(latest_data$clothes_number)
+min_clothes_number <- min(latest_data$clothes_number)
+max_clothes_number <- max(latest_data$clothes_number)
+
+# dynamic comments
+paste("During my 30/3 observation, people wears", round(average_clothes_number, 2), "clothes in average, and people wear most is", paste0(max_clothes_number, ","), "at least wear", min_clothes_number, "clothes.")
+
+
+```
